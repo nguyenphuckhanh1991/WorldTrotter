@@ -24,6 +24,7 @@ class ConversionViewController: UIViewController,UITextFieldDelegate {
             updateCelsiusLabel()
         }
     }
+    
     var celsiusValue: Measurement<UnitTemperature>? {
         if let fahrenheitValue = fahrenheitValue {
             return fahrenheitValue.converted(to: .celsius)
@@ -31,12 +32,14 @@ class ConversionViewController: UIViewController,UITextFieldDelegate {
             return nil
         }
     }
+    
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func fahrenheitFieldEditingChanged(_ sender: UITextField) {
-        //celsiusLabel.text = textField.text
-        if let text = textField.text, let value = Double(text) {
-            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
+//        if let text = textField.text, let value = Double(text) {
+//            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
+        if let text = textField.text, let number = numberFormatter.number(from: text) {
+            fahrenheitValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         } else {
             fahrenheitValue = nil
         }
@@ -48,7 +51,6 @@ class ConversionViewController: UIViewController,UITextFieldDelegate {
     
     func updateCelsiusLabel() {
         if let celsiusValue = celsiusValue {
-            //celsiusLabel.text = "\(celsiusValue.value)"
             celsiusLabel.text = numberFormatter.string(from: NSNumber(value: celsiusValue.value))
         } else {
             celsiusLabel.text = "???"
@@ -56,13 +58,17 @@ class ConversionViewController: UIViewController,UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        print("Current text: \(textField.text)")
-//        print("Replacement text: \(string)")
-        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-        let replacementTextHasDecimalSeparator = string.range(of: ".")
         
-        if existingTextHasDecimalSeparator != nil,
-            replacementTextHasDecimalSeparator != nil {
+//        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+//        let replacementTextHasDecimalSeparator = string.range(of: ".")
+
+        let currentLocale = Locale.current
+        let decimalSeparator = currentLocale.decimalSeparator ?? "."
+        
+        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeparator)
+        let replacementTextHasDecimalSeparator = string.range(of: decimalSeparator)
+        
+        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil {
             return false
         } else {
             return true

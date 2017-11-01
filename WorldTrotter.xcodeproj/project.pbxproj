@@ -14,6 +14,7 @@
 		B72B24231FA6E4D600805C99 /* WorldTrotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B24221FA6E4D600805C99 /* WorldTrotterTests.swift */; };
 		B72B242E1FA6E4D600805C99 /* WorldTrotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72B242D1FA6E4D600805C99 /* WorldTrotterUITests.swift */; };
 		B787FB551FA83737008ECFA2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B787FB541FA83737008ECFA2 /* MapViewController.swift */; };
+		B787FB721FA86B87008ECFA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B787FB741FA86B87008ECFA2 /* Localizable.strings */; };
 		B7B15A411FA6FF93001723AA /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B15A401FA6FF93001723AA /* ConversionViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,11 @@
 		B72B242D1FA6E4D600805C99 /* WorldTrotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTrotterUITests.swift; sourceTree = "<group>"; };
 		B72B242F1FA6E4D600805C99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B787FB541FA83737008ECFA2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B787FB571FA86049008ECFA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B787FB581FA860A7008ECFA2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		B787FB591FA860A7008ECFA2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B787FB731FA86B87008ECFA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B787FB751FA86B89008ECFA2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B7B15A401FA6FF93001723AA /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,11 +107,12 @@
 			children = (
 				B72B240D1FA6E4D500805C99 /* AppDelegate.swift */,
 				B7B15A401FA6FF93001723AA /* ConversionViewController.swift */,
+				B787FB541FA83737008ECFA2 /* MapViewController.swift */,
+				B787FB741FA86B87008ECFA2 /* Localizable.strings */,
 				B72B24111FA6E4D500805C99 /* Main.storyboard */,
 				B72B24141FA6E4D500805C99 /* Assets.xcassets */,
 				B72B24161FA6E4D500805C99 /* LaunchScreen.storyboard */,
 				B72B24191FA6E4D500805C99 /* Info.plist */,
-				B787FB541FA83737008ECFA2 /* MapViewController.swift */,
 			);
 			path = WorldTrotter;
 			sourceTree = "<group>";
@@ -217,6 +224,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = B72B24011FA6E4D500805C99;
 			productRefGroup = B72B240B1FA6E4D500805C99 /* Products */;
@@ -236,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B72B24181FA6E4D500805C99 /* LaunchScreen.storyboard in Resources */,
+				B787FB721FA86B87008ECFA2 /* Localizable.strings in Resources */,
 				B72B24151FA6E4D500805C99 /* Assets.xcassets in Resources */,
 				B72B24131FA6E4D500805C99 /* Main.storyboard in Resources */,
 			);
@@ -304,6 +313,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				B72B24121FA6E4D500805C99 /* Base */,
+				B787FB571FA86049008ECFA2 /* en */,
+				B787FB581FA860A7008ECFA2 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -312,8 +323,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				B72B24171FA6E4D500805C99 /* Base */,
+				B787FB591FA860A7008ECFA2 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B787FB741FA86B87008ECFA2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B787FB731FA86B87008ECFA2 /* en */,
+				B787FB751FA86B89008ECFA2 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -323,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -380,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
