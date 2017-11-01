@@ -6,5 +6,5 @@ Simple project to guide you through your exploration of the IOS :
   - View Controllers
   - Programmatic Views
   - Localization
-  - Controlling Animations
+
 
